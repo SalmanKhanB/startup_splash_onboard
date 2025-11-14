@@ -46,7 +46,7 @@ class CustomTextField extends StatelessWidget {
             // title
             Align(
               alignment: AlignmentDirectional.centerStart,
-              child: Text(labelText ?? '', style: context.font14.copyWith(fontWeight: FontWeight.w700)),
+              child: Text(labelText?.tr ?? '', style: context.font14.copyWith(fontWeight: FontWeight.w700)),
             ),
             SizedBox(height: AppSize.s8),
           ],
@@ -68,7 +68,7 @@ class CustomTextField extends StatelessWidget {
               suffixIcon: suffixIcon != null
                   ? Icon(suffixIcon, size: 20.sp, color: Theme.of(context).hintColor)
                   : null,
-              hintText: hintText,
+              hintText: hintText?.tr,
             ),
             style: context.font14.copyWith(fontWeight: FontWeight.normal),
           ),
@@ -95,12 +95,12 @@ class CustomDropDown extends StatelessWidget {
         if (labelText != null) ...[
           Align(
             alignment: AlignmentDirectional.centerStart,
-            child: Text(labelText ?? '', style: context.font14.copyWith(fontWeight: FontWeight.w700)),
+            child: Text(labelText?.tr ?? '', style: context.font14.copyWith(fontWeight: FontWeight.w700)),
           ),
           SizedBox(height: AppSize.s8),
         ],
         DropdownButtonFormField(
-          decoration: InputDecoration(labelText: hintText),
+          decoration: InputDecoration(labelText: hintText?.tr),
           dropdownColor: Theme.of(context).cardColor,
           style: context.font14,
           items: items,

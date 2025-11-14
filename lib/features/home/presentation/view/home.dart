@@ -11,21 +11,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(title: Text('home'.tr)),
       body: ListView(
         padding: AppPadding.padding16,
         children: [
           Column(
             children: <Widget>[
-              Text('w100', style: context.font18.copyWith(fontWeight: FontWeight.w100)),
-              Text('w200', style: context.font18.copyWith(fontWeight: FontWeight.w200)),
-              Text('w300', style: context.font18.copyWith(fontWeight: FontWeight.w300)),
-              Text('w400', style: context.font18.copyWith(fontWeight: FontWeight.w400)),
-              Text('w500', style: context.font18.copyWith(fontWeight: FontWeight.w500)),
-              Text('w600', style: context.font18.copyWith(fontWeight: FontWeight.w600)),
-              Text('w700', style: context.font18.copyWith(fontWeight: FontWeight.w700)),
-              Text('w800', style: context.font18.copyWith(fontWeight: FontWeight.w800)),
-              Text('w900', style: context.font18.copyWith(fontWeight: FontWeight.w900)),
+              Text('w100'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w100)),
+              Text('w200'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w200)),
+              Text('w300'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w300)),
+              Text('w400'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w400)),
+              Text('w500'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w500)),
+              Text('w600'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w600)),
+              Text('w700'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w700)),
+              Text('w800'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w800)),
+              Text('w900'.tr, style: context.font18.copyWith(fontWeight: FontWeight.w900)),
             ],
           ),
           SizedBox(height: AppSize.s32),
@@ -33,13 +33,13 @@ class HomeScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: PrimaryOutlineButton(
-                  text: 'Outline Button',
+                  text: 'outline_button'.tr,
                   icon: Icon(Iconsax.video, size: 16.sp, color: primaryColor),
                   onPressed: () {
                     showConfirmationSheet(
-                      title: 'Are you sure?',
-                      subtitle: 'This action cannot be undone.',
-                      actionText: 'Yes',
+                      title: 'are_you_sure'.tr,
+                      subtitle: 'action_cannot_be_undone'.tr,
+                      actionText: 'yes'.tr,
                       onAccept: pop,
                     );
                   },
@@ -48,13 +48,13 @@ class HomeScreen extends StatelessWidget {
               SizedBox(width: AppSize.s16),
               Expanded(
                 child: PrimaryButton(
-                  text: 'Primary Button',
-                  icon: Icon(Iconsax.video, size: 16.sp, color: Colors.white),
+                  text: 'primary_button',
+                  icon: Icon(Iconsax.video, size: 16.sp, color: whiteColor),
                   onPressed: () {
                     showConfirmationDialog(
-                      title: 'Are you sure?',
-                      subtitle: 'This action cannot be undone.',
-                      actionText: 'Yes',
+                      title: 'are_you_sure'.tr,
+                      subtitle: 'action_cannot_be_undone'.tr,
+                      actionText: 'yes'.tr,
                       onAccept: pop,
                     );
                   },
@@ -86,22 +86,22 @@ class HomeScreen extends StatelessWidget {
             );
           }),
           SizedBox(height: AppSize.s32),
-          const CustomTextField(hintText: 'Enter text', prefixIcon: Iconsax.search_normal),
+          const CustomTextField(hintText: 'enter_text', prefixIcon: Iconsax.search_normal),
           SizedBox(height: AppSize.s16),
           CustomDropDown(
-            hintText: 'Dropdown',
-            items: const [
+            hintText: 'dropdown'.tr,
+            items: [
               DropdownMenuItem(
-                value: 'Item 1',
-                child: Text('Item 1'),
+                value: 'item_1',
+                child: Text('item_1'.tr),
               ),
               DropdownMenuItem(
-                value: 'Item 2',
-                child: Text('Item 2'),
+                value: 'item_2',
+                child: Text('item_2'.tr),
               ),
               DropdownMenuItem(
-                value: 'Item 3',
-                child: Text('Item 3'),
+                value: 'item_3',
+                child: Text('item_3'.tr),
               ),
             ],
             onChanged: (value) {},
@@ -138,7 +138,7 @@ class ThemeModeWidget extends StatelessWidget {
             child: Icon(icon, size: 18.sp),
           ),
           SizedBox(height: AppSize.s8),
-          Text(text, style: context.font12),
+          Text(text.tr, style: context.font12),
         ],
       ),
     );

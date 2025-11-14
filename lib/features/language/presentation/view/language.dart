@@ -1,6 +1,7 @@
 import 'package:startup_repo/core/utils/app_padding.dart';
 import 'package:startup_repo/core/utils/app_radius.dart';
 import 'package:startup_repo/core/utils/design_system.dart';
+import 'package:startup_repo/features/onboarding/presentation/view/onboarding_screen.dart';
 import '../../../../imports.dart';
 
 class LanguageScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                         con.setSelectIndex(index);
                         con.setLanguage(Locale(language.languageCode, language.countryCode));
                       },
-                      overlayColor: WidgetStateProperty.all(Colors.transparent),
+                      overlayColor: WidgetStateProperty.all(transparent),
                       child: Padding(
                         padding: AppPadding.vertical(12),
                         child: Row(
@@ -74,7 +75,12 @@ class _LanguageScreenState extends State<LanguageScreen> {
       }),
       bottomNavigationBar: Padding(
         padding: AppPadding.padding16.copyWith(top: 0),
-        child: PrimaryButton(text: 'done'.tr, onPressed: pop),
+        child: PrimaryButton(
+          text: 'done'.tr,
+          onPressed: () async {
+            await launchScreen(const OnboardingScreen(), pushAndRemove: true);
+          },
+        ),
       ),
     );
   }

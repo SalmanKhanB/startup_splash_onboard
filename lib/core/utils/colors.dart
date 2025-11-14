@@ -37,6 +37,10 @@ const Color textColorDark = Colors.white;
 const Color iconColorLight = Color(0xff606060);
 const Color iconColorDark = Color(0xFF909090);
 
+// pure colors (for overlays, shadows, etc.)
+const Color whiteColor = Colors.white;
+const Color blackColor = Colors.black;
+
 // gradient
 LinearGradient get primaryGradient => const LinearGradient(
       colors: [secondaryColor, primaryColor],

@@ -9,6 +9,6 @@ ElevatedButtonThemeData get elevatedButtonThemeData => ElevatedButtonThemeData(
         minimumSize: WidgetStateProperty.all(Size(double.infinity, 50.sp)), // Full width
         shape: WidgetStateProperty.all(AppRadius.circular16Shape),
         backgroundColor: const WidgetStatePropertyAll(primaryColor),
-        textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 14.sp, color: Colors.white)),
+        textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 14.sp, color: whiteColor)),
       ),
     );

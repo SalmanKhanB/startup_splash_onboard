@@ -14,7 +14,7 @@ import 'core/theme/light_theme.dart';
 import 'core/utils/app_constants.dart';
 import 'core/utils/messages.dart';
 import 'core/utils/scroll_behavior.dart';
-import 'features/home/presentation/view/home.dart';
+import 'features/splash/presentation/view/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
                   );
                 },
               ),
-              home: const HomeScreen(),
+              home: SplashScreen(),
             );
           }),
         ),
