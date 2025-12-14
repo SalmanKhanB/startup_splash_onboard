@@ -7,6 +7,7 @@ import 'package:startup_repo/core/utils/app_constants.dart';
 import '../../features/language/domain/binding/language_binding.dart';
 import '../../features/splash/domain/binding/splash_binding.dart';
 import '../../features/onboarding/domain/binding/onboarding_binding.dart';
+import '../../features/settings/domain/binding/settings_binding.dart';
 import '../api/api_client.dart';
 import '../api/api_client_interface.dart';
 import '../../features/language/data/model/language.dart';
@@ -18,7 +19,7 @@ Future<Map<String, Map<String, String>>> init() async {
   ApiClientInterface apiClient = ApiClient(prefs: Get.find(), baseUrl: AppConstants.baseUrl);
   Get.lazyPut(() => apiClient);
 
-  List<Bindings> bindings = [ThemeBinding(), LanguageBinding(), SplashBinding(), OnboardingBinding()];
+  List<Bindings> bindings = [ThemeBinding(), LanguageBinding(), SplashBinding(), OnboardingBinding(), SettingsBinding()];
 
   for (Bindings binding in bindings) {
     binding.dependencies();

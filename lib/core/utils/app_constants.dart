@@ -18,6 +18,10 @@ class AppConstants {
   static const String token = 'token';
   static const String localizationKey = 'localization';
 
+  // Store URLs
+  static const String androidStoreUrl = 'https://play.google.com/store/apps/details?id=com.example.app';
+  static const String iOSStoreUrl = 'https://apps.apple.com/app/id000000000';
+
   // Language
   static List<LanguageModel> languages = [
     LanguageModel(languageName: 'English', countryCode: 'US', languageCode: 'en'),

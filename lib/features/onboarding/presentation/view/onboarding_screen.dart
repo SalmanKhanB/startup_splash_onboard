@@ -158,6 +158,8 @@ class _OnboardingPage extends StatelessWidget {
           child: Column(
             children: [
               const Spacer(),
+
+              
               // Title
               Padding(
                 padding: AppPadding.horizontal(32),

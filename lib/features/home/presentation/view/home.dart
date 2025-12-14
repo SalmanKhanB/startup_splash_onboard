@@ -1,5 +1,6 @@
 import 'package:startup_repo/core/utils/app_padding.dart';
 import 'package:startup_repo/core/utils/design_system.dart';
+import 'package:startup_repo/features/settings/presentation/view/settings_screen.dart';
 import 'package:startup_repo/features/theme/presentation/controller/theme_controller.dart';
 import 'package:startup_repo/core/widgets/confirmation_dialog.dart';
 import 'package:startup_repo/core/widgets/confirmation_sheet.dart';
@@ -11,7 +12,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('home'.tr)),
+      appBar: AppBar(
+        title: Text('home'.tr),
+        actions: [
+          IconButton(
+            icon: const Icon(Iconsax.diamonds),
+            onPressed: () => showToast('coming_soon'.tr),
+            tooltip: 'coming_soon'.tr,
+          ),
+          IconButton(
+            icon: const Icon(Iconsax.setting_2),
+            onPressed: () => launchScreen(const SettingsScreen()),
+            tooltip: 'settings'.tr,
+          ),
+        ],
+      ),
       body: ListView(
         padding: AppPadding.padding16,
         children: [
