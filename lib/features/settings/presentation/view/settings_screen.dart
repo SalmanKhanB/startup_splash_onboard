@@ -2,10 +2,25 @@ import 'package:startup_repo/core/utils/app_padding.dart';
 import 'package:startup_repo/core/utils/app_radius.dart';
 import 'package:startup_repo/core/utils/app_size.dart';
 import 'package:startup_repo/features/settings/presentation/controller/settings_controller.dart';
+import 'package:startup_repo/features/settings/domain/binding/settings_binding.dart';
 import '../../../../imports.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Ensure binding is initialized
+    if (!Get.isRegistered<SettingsController>()) {
+      SettingsBinding().dependencies();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

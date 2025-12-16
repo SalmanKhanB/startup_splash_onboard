@@ -8,10 +8,10 @@ class SplashController extends GetxController implements GetxService {
 
   static SplashController get find => Get.find<SplashController>();
 
-  late ConfigModel _settingModel;
-  ConfigModel get settingModel => _settingModel;
+  ConfigModel? _settingModel;
+  ConfigModel? get settingModel => _settingModel;
 
-  set settingModel(ConfigModel settingModel) {
+  set settingModel(ConfigModel? settingModel) {
     _settingModel = settingModel;
     update();
   }
@@ -22,8 +22,14 @@ class SplashController extends GetxController implements GetxService {
   }
 
   Future<void> getConfig() async {
+    try {
     _settingModel = await settingsService.getConfig();
     update();
+    } catch (e) {
+      // Handle error if config fails to load
+      _settingModel = null;
+      update();
+    }
   }
 
   Future<void> saveFirstTime() async => await settingsService.saveFirstTime();

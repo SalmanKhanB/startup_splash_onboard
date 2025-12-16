@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:startup_repo/features/language/presentation/view/language.dart';
-import 'package:startup_repo/features/settings/presentation/view/settings_document_screen.dart';
 import 'package:startup_repo/features/splash/presentation/controller/splash_controller.dart';
 import 'package:startup_repo/features/theme/presentation/controller/theme_controller.dart';
 import 'package:startup_repo/imports.dart';
@@ -32,17 +31,29 @@ class SettingsController extends GetxController {
     );
   }
 
-  void openPrivacyPolicy() => _openDocument(
-        titleKey: 'privacy_policy',
-        content: splashController.settingModel.privacyPolicy,
-      );
+  Future<void> openPrivacyPolicy() async {
+    final url = AppConstants.privacyPolicyUrl;
+    final launched = await settingsService.openUrl(url);
+    if (!launched) {
+      showToast('could_not_open_url'.tr);
+    }
+  }
 
-  void openTerms() => _openDocument(
-        titleKey: 'terms_conditions',
-        content: splashController.settingModel.termsAndConditions,
-      );
+  Future<void> openTerms() async {
+    final url = AppConstants.termsAndConditionsUrl;
+    final launched = await settingsService.openUrl(url);
+    if (!launched) {
+      showToast('could_not_open_url'.tr);
+    }
+  }
 
-  Future<void> shareApp() => settingsService.shareApp(message: 'share_app_message'.tr);
+  Future<void> shareApp() async {
+    final url = Platform.isIOS ? AppConstants.iOSStoreUrl : AppConstants.androidStoreUrl;
+    await settingsService.shareApp(
+      message: 'share_app_message'.tr,
+      url: url,
+    );
+  }
 
   Future<void> rateApp() async {
     final url = Platform.isIOS ? AppConstants.iOSStoreUrl : AppConstants.androidStoreUrl;
@@ -52,9 +63,6 @@ class SettingsController extends GetxController {
     }
   }
 
-  void _openDocument({required String titleKey, required String content}) {
-    launchScreen(SettingsDocumentScreen(titleKey: titleKey, content: content));
-  }
 }
 
 

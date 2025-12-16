@@ -97,13 +97,13 @@ class OnboardingScreen extends StatelessWidget {
                           child: PrimaryButton(
                             text: controller.currentPage == 2 ? 'continue'.tr : 'next'.tr,
                             onPressed: controller.nextPage,
-                            icon: controller.currentPage == 2
-                                ? null
-                                : Icon(
-                                    Iconsax.arrow_right_3,
-                                    size: 16.sp,
-                                    color: whiteColor,
-                                  ),
+                            // icon: controller.currentPage == 2
+                            //     ? null
+                            //     : Icon(
+                            //         Iconsax.arrow_right_3,
+                            //         size: 16.sp,
+                            //         color: whiteColor,
+                            //       ),
                           ),
                         ),
                       ),
